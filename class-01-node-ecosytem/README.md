@@ -15,7 +15,7 @@
 
 ## Testing Resources
 * Read [a gentle intro to tdd in js]
-* Read [chai expect guide]
+* Read [expect docs](https://github.com/mjackson/expect)
 * Read [mocha getting started]
 
 ## Learning Objectives
@@ -98,10 +98,10 @@
  * GREEN - the test pass because the feature is implemented
  * REFACTOR - the code runs better, and the test still pass
 
-#### Mocha and Chai 
+#### Mocha and Expect 
 * Mocha is a testing framwork
  * Its job is to facilitate writing and running test
-* Chai is an assertion library
+* Expect is an assertion library
  * Its job facilitate writing expectations and then throw errors when the expectations are not met
 
 <!--links -->
@@ -111,6 +111,5 @@
 [about v8]: https://developers.google.com/v8/
 [what is npm]: https://docs.npmjs.com/getting-started/what-is-npm
 [a gentle intro to tdd in js]: http://jrsinclair.com/articles/2016/gentle-introduction-to-javascript-tdd-intro/
-[chai expect guide]: http://chaijs.com/guide/styles/#expect
 [mocha getting started]: http://mochajs.org/#getting-started
 [just another guide to ES6]: https://medium.com/sons-of-javascript/javascript-an-introduction-to-es6-1819d0d89a0f#.wb7rj1gin
