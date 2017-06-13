@@ -22,9 +22,6 @@
 
 ## Learning Objectives
 <!-- unordered list of learning objectives -->
-*
-*
-*
 * understand the difference between context and scope
 * learn how to configure a functions context
 * understand the roll context plays in constructor functions
@@ -90,8 +87,8 @@
 * try catch blocks allow you to safely throw a an error and handle it
 
 ### Pass by reference vs Pass by value
-*
-*
+* Objects are passed by reference
+* Strings, Numbers, Bools, undefiend, and null are passed by value
 
 ### Call, Bind, Apply
 * when a function has a `this` we say that `this` is the functions context
