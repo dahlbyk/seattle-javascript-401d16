@@ -40,11 +40,6 @@
  * run `npm init` and answer the questions
  * now you should find a package.json inside your current directory :)
 
-#### Gulp (just fyi)
-* Gulp is a tool that helps you automate time-consuming tasks that are a part of your dev workflow
-* Gulp is configured in pure javascript, so you can use any node module in a gulp task
-* Gulp has a awesome plugin ecosystem
-
 #### Node Errors
 ###### Error
 * a generic error
