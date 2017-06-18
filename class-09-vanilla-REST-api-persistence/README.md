@@ -1,6 +1,14 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 09: Vanilla REST API with Persistence
 =====================================
 
+# Readings
+* Read [a brief history of databases](http://avant.org/project/history-of-databases/)
+
+# Learning Objectives
+* Students will learn to design a RESTful api with file system persistence 
+* Students will learn the difference between implamentation vs interface
+
+# Overview
 ## Persistence
   * **Overview**
     * today, we are refactoring our vanilla REST API to include a layer of file system persistence
@@ -24,6 +32,3 @@
         * **SQL Server**
         * **SQLite**
     * **demo:** vanilla rest api with file system persistence, custom response module, and general refactoring
-
-## Vanilla REST API with File System Persistence Visualization
-  ![visualization](https://s3-us-west-2.amazonaws.com/s.cdpn.io/154088/vanilla-rest-api-with-persistence.png)

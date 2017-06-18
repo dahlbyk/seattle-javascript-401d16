@@ -1,6 +1,14 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 08: Vanilla REST API
 =====================================
 
+## Readings
+* Watch [Promises](https://www.youtube.com/watch?v=2d7s3spWAzo)
+
+## Learning Objectives
+* Students will learn to use promises to manange async code
+* Students will learn to create a RESTful api with in memory persistance
+
+# Overview
 ## Promises
   * **Overview**
     * promises are used to solve the problem of nested callbacks (aka: "callback hell")
@@ -44,6 +52,3 @@
   * **More ES6**
     * **`let`** - declares a block scope local variable (this limits it's usage to the block, statement, or expression in which it is used)
     * **arrow functions (aka fat arrow functions)** `() =>` offer a more concise syntax for writing function expressions and change the way that `this` binds in functions
-
-## Vanilla REST API Visualization Map
-  ![visualization](https://s3-us-west-2.amazonaws.com/s.cdpn.io/154088/vanilla-rest-api.png)
