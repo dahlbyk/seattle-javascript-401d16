@@ -6,6 +6,16 @@ let matrixUpdate = (m, x, y, val) => {
 	return copy 
 }
 
+// alternative
+//matrixUpdate = (m, x, y, val) => 
+	//m.map((row, indexY) => 
+		//row.map((item, indexX) => 
+			//x == indexX && y == indexY ? val : item))
+
+// alternative
+//matrixUpdate = (m, x, y, val) => {
+	//return Object.assign([], m, {[y]: Object.assign([], m[y], {[x]: val})}) 
+//}
 
 try {
   console.log('testing matrixUpdate')
