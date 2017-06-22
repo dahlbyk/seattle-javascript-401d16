@@ -12,7 +12,7 @@ var storage = {}
 // module logic
 // register routes with router
 router.get('/hello', (req, res) => {
-  res.write('yeyyeyeyye')
+  res.write('hello world')
   res.end()
 })
 
