@@ -3,7 +3,7 @@
 const storage = require('../lib/storage.js')
 
 class Note {
-  constructor(content, id ){
+  constructor(){
     this.content = content
     this.id = id
   }
