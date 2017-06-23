@@ -16,6 +16,12 @@ let map = (list, callback) =>
     return prev
   }, [])
 
+// alternatives using call and map
+//map = (list, callback) => 
+  //return Array.prototype.map.call(list, callback)
+
+//reduce = (list, ...args) => 
+  //return Array.prototype.reduce.apply(list, args)
 
 try {
   console.log('testing reduce')
