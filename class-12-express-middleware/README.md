@@ -1,6 +1,11 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 12: Express Middleware
 =====================================
 
+## Reading 
+* Skim [morgan docs](https://github.com/expressjs/morgan)
+* Skim [cors docs](https://github.com/expressjs/cors)
+* Skim [dotenv docs](https://github.com/motdotla/dotenv)
+
 ## Middleware
   * **Overview**
     * middleware functions are functions that have access to the `req` and `res` objects
