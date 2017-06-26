@@ -1,6 +1,9 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 13: Mongo and Express
 =====================================
 
+## Readings
+* Read [Mongoose Guide](http://mongoosejs.com/docs/guide.html)
+
 ## MongoDB
   * **Overview**
     * **MongoDB** is a document based (noSQL) database
