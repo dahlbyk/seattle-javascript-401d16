@@ -2,8 +2,8 @@
 =====================================
 
 ## Readings
-[Read Express guide](http://expressjs.com/en/guide/routing.html)
-[Skim Express Api docs](http://expressjs.com/en/4x/api.html)
+* [Read Express guide](http://expressjs.com/en/guide/routing.html)
+* [Skim Express Api docs](http://expressjs.com/en/4x/api.html)
 
 ## Express
   * **Overview**
