@@ -31,5 +31,3 @@
       * this is done through an instance of `express.Router`
     * today, we'll use an instance of the `express.Router` to create a custom `note-router` with **GET**, **POST**, and **PUT** route functionality
 
-## Express API Visualization
-  ![visualization](https://s3-us-west-2.amazonaws.com/s.cdpn.io/154088/express-api.png)
