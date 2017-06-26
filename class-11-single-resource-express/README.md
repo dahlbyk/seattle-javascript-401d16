@@ -1,6 +1,10 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 11: Single Resource Express API
 =====================================
 
+## Readings
+[Read Express guide](http://expressjs.com/en/guide/routing.html)
+[Skim Express Api docs](http://expressjs.com/en/4x/api.html)
+
 ## Express
   * **Overview**
     * `express.js` is a web application framework that provides us with a series of tools that are used to simplify the development process
