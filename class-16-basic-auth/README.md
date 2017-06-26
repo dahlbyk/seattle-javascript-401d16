@@ -1,6 +1,9 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 16: Basic Auth
 =====================================
 
+## Readings
+* Read [Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
+
 ## Continuous Integration (CI)
   * **Overview**
     * CI is the concept of merging new code into a collaborative repository multiple times a day

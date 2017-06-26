@@ -1,6 +1,11 @@
 ![cf](http://i.imgur.com/7v5ASc8.png) 12: Express Middleware
 =====================================
 
+## Reading 
+* Skim [morgan docs](https://github.com/expressjs/morgan)
+* Skim [cors docs](https://github.com/expressjs/cors)
+* Skim [dotenv docs](https://github.com/motdotla/dotenv)
+
 ## Middleware
   * **Overview**
     * middleware functions are functions that have access to the `req` and `res` objects
@@ -26,5 +31,3 @@
       * this is done through an instance of `express.Router`
     * today, we'll use an instance of the `express.Router` to create a custom `note-router` with **GET**, **POST**, and **PUT** route functionality
 
-## Express API Visualization
-  ![visualization](https://s3-us-west-2.amazonaws.com/s.cdpn.io/154088/express-api.png)
