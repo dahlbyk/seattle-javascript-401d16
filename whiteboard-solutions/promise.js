@@ -13,53 +13,35 @@ class Promise {
   constructor(callback){
     this.successCallbacks = new Queue()
     this.failureCallbacks = new Queue()
-    this.handleReject = this.handleReject.bind(this)
-    this.handleResolve = this.handleResolve.bind(this)
+
+    let handleNext = (handlers, data) => {
+      try {
+        let nextCallback = handlers.dequeue()
+        if(!nextCallback) 
+          return 
+        let result = nextCallback(data)
+        if(result instanceof Promise){
+          result
+          .then(data => handleNext(this.successCallbacks, data))
+          .catch(err => handleNext(this.failureCallbacks, err))
+          return 
+        }
+        handleNext(this.successCallbacks, result)
+      } catch (err) {
+        handleNext(this.failureCallbacks, err)
+      }
+    }
+
     setTimeout(() => {
       try {
-        callback(this.handleResolve, this.handleReject)
+        callback(
+          data => handleNext(this.successCallbacks, data) , 
+          err => handleNext(this.failureCallbacks, err)
+        )
       } catch(err){
-        this.handleReject(err)
+        nextCallback(this.failureCallbacks, err)
       }
     }, 0)
-  }
-
-  handleResolve(data) {
-    console.log('handleResolve', data)
-    try {
-      let nextCallback = this.successCallbacks.dequeue()
-      if(!nextCallback) 
-        return 
-      let result = nextCallback(data)
-      if(result instanceof Promise){
-        result
-        .then(this.handleResolve)
-        .catch(this.handleReject)
-        return 
-      }
-      this.handleResolve(result)
-    } catch (err) {
-      this.handleReject(err)
-    }
-  }
-
-  handleReject(data) {
-    console.log('handleReject', data)
-    try {
-      let nextCallback = this.failureCallbacks.dequeue()
-      if(!nextCallback) 
-        return 
-      let result = nextCallback(data)
-      if(result instanceof Promise){
-        result
-        .then(this.handleResolve)
-        .catch(this.handleReject)
-        return 
-      }
-      this.handleResolve(result)
-    } catch (err) {
-      this.handleReject(err)
-    }
   }
 
   then(callback){
