@@ -1,4 +1,4 @@
-# 401 JS -- class  
+# 401 JS -- class 26 frontend tooling and react
 
 ## Learning Objectives
 * Students will be able to configure webpack to compile JS into a bundle
