@@ -9,4 +9,16 @@
 
 ## Overview
 #### Tree 
-A tree is an Abstract Data Type (ADT) where each node has as many children as it likes. In a Tree their may not be any loops, where children are able to reference any ancestor. In Tree's connections between nodes are called edges, and Nodes without children are called Leafs. The top of a tree is called the root, and the Depth of a tree is the maximum number of edges from the root to a leaf.
+A tree is an Abstract Data Type (ADT) where each node has as many children as it likes. In a tree there may not be any loops, where children are able to reference an ancestor. 
+* The top node of a tree is called the root.
+* Connections between nodes are called edges. 
+* Nodes without children are called Leafs.  
+* The depth of a tree is the maximum number of edges from the root to a leaf.
+
+###### K-ary tree
+a k-ary tree is a tree where each node has no more than K-children
+* a complete k-ary tree is a tree where every depth level is filled out completely, before the next level can recieve any nodes
+* a perfert k-ary tree is a tree where all leaf nodes are the same depth
+
+##### Binary Tree
+a 2-ary tree is often called a binary tree.
