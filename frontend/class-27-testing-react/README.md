@@ -30,5 +30,5 @@ Enzyme is a utility designed to ease the testing of react components. It has a J
 * `mount(<Component />)` - Full Rendering is ideal when your components interact with DOM apis. It recures that a full DOM API be available at the global scope (document needs to be a global variable).
 
 #### Forms and Inputs
-React form elements maintain internal state. Think of React inputs as stateful child components. This means that we must manage the state of inputs through our own stateful  component and one way data binding. We create a parent component I'll refer to as a _container_ that manages the state for all child components of the form, passing any necissary state down into inputs through props. Each input has an `onChange` event that we can handle and use to update our containers state each time the user interacts with an input.
+React form elements maintain internal state. Think of React inputs as stateful child components. This means that we must manage the state of inputs through our own stateful  component and one way data binding. We create a parent component I'll refer to as a _form-container_ that manages the state for all child components of the form, passing any necissary state down into inputs through props. Each input has an `onChange` event that we can handle and use to update our _form-container's_ state each time the user interacts with an input.
 
