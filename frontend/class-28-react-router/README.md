@@ -36,5 +36,5 @@ Because data can only flow from parents to children, if more than one component 
 ES6 now suports its own ability to define JS modules. ES6 Modules are like commonJS modules, except they are automaticly strict-mode code, even if you don't write use-strict. ES6 now uses `export` and `import` to define and load modules
 
 #### Frontend React Routing
-The defacto routing libray for react web apps is `react-router-dom`. It manages switching between components based off state or the window location, meanwile controllingthe browser history api. By using the browser history api, it enables users to hit the back button on their browser and revert to the last route without re-rendering the page.
+The defacto routing libray for react web apps is `react-router-dom`. It manages switching between components based off state or the window location, meanwile controlling the browser history api. By using the browser history api, it enables users to hit the back button on their browser and revert to the last route without re-rendering the page.
 
