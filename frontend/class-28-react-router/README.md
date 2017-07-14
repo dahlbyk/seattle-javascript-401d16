@@ -30,7 +30,7 @@ View state is any state that has to do with how a specific component should look
 * When  a hamburger menu is open or closed 
 
 #### Lifting State
-Because data can only flow from parents to children, if more than one component needs to reflect the same changing data, that data must be manged higher on the tree by a mutual parrent. One solution to this probem is to lift all *application state* to the top of the app, enabling the entire app to share changing state. *View State* does not often have to be lifted.
+Because data can only flow from parents to children, if more than one component needs to reflect the same changing data, that data must be manged higher on the tree by a mutual parrent. One solution to this probem is to lift all **application state** to the top of the app, enabling the entire app to share changing state. **View State** does not often have to be lifted.
 
 #### ES6 modules
 ES6 now suports its own ability to define JS modules. ES6 Modules are like commonJS modules, except they are automaticly strict-mode code, even if you don't write use-strict. ES6 now uses `export` and `import` to define and load modules
