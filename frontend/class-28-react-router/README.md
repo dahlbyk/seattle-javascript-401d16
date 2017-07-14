@@ -3,7 +3,6 @@
 ## Learning Objectives
 * Students will learn to create front end routes using react-router-dom 
 * Sudents will learn to restructure their applications into modules
-* Students will learn to add ajax requests to their apps
 * Students will learn to lift application state to better controll one way data flow
  
 ## Readings
