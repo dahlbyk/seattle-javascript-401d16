@@ -25,7 +25,7 @@ Jest is a javascript testing framework with out of the box react support. Jest h
 
 ###### Enzyme 
 Enzyme is a utility designed to ease the testing of react components. It has a JQuery like api that helps interact with React components. It provides several methods for compiling/rendering components 
-* `mount(<Component />)` - Shallow rendering is useful to test a component witout indirectly asserting behavior of child components
+* `shallow(<Component />)` - Shallow rendering is useful to test a component witout indirectly asserting behavior of child components
 * `render(<Component />)` - Static rendring is used to render components to static html (text) and analyze the resulting HTML structure 
 * `mount(<Component />)` - Full Rendering is ideal when your components interact with DOM apis. It recures that a full DOM API be available at the global scope (document needs to be a global variable).
 
