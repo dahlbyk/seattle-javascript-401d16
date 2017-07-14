@@ -5,6 +5,7 @@
 * Sudents will learn to restructure their applications into modules
 * Students will learn the difference between view state and application state
 * Students will learn to lift application state to better controll one way data flow
+* Students will learn to create and import sass partials
  
 ## Readings
 * [es6 modules](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/)
