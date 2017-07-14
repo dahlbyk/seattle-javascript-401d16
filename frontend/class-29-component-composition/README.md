@@ -1,4 +1,4 @@
-# 401 JS -- class  
+# 401 JS -- class 29 composition
 
 ## Learning Objectives
 * Students will learn to about composition vs inheritance
