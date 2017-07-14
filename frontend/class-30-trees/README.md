@@ -20,5 +20,5 @@ a k-ary tree is a tree where each node has no more than K-children
 * a complete k-ary tree is a tree where every depth level is filled out completely, before the next level can recieve any nodes
 * a perfert k-ary tree is a tree where all leaf nodes are the same depth
 
-##### Binary Tree
+###### Binary Tree
 a 2-ary tree is often called a binary tree.
