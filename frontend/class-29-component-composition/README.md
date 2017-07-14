@@ -16,4 +16,4 @@
 Some components dont know their children a head of time. React components can use the speacal `children` prop to pass children directly into their output. For example a `SpeachBubble` component could be passed a `SuccessMessage` or `ErrorMessage` component to be used as a child component.
 
 ###### Specialization 
-Composition can be used to create special cases of another component. For example a Modal component could be composed to create a SingupModal or a LoginModal.
+Composition can be used to create special cases of another component. For example a `Modal` component could be composed to create a `SingupModal` or a `LoginModal`.
