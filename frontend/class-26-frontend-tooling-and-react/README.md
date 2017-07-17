@@ -1,9 +1,8 @@
 # 401 JS -- class 26 frontend tooling and react
 
 ## Learning Objectives
-* Students will be able to configure webpack to compile JS into a bundle
-* Students will be able to configure webpack to compile sass into a bundle
-* Stuendts will be able to configure babel to transpile JSX and ES6 to ES5 javscript
+* Students will be able to configure webpack to build a web application bundle
+* Students will be able to configure babel to transpile JSX and ES6 to ES5 javscript
 * Students will be able to create and render react components to the DOM
 * Students will be able to add event listeners to react components 
 * Students will be able to update react component state
