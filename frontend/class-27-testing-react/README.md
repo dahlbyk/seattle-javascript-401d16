@@ -14,21 +14,35 @@
 * Skim [Enzyme Docs](https://github.com/airbnb/enzyme)
 
 ## Overview
-#### Testing 
-###### Jest
-Jest is a javascript testing framework with out of the box react support. Jest has a very simular API to mocha. Jest methods include...  
-* describe (same as mocha)
-* beforeAll, afterAll (same as mocha before and after)
-* beforeEach , afterEach (same as mocha)
-* test (same as mocha it)
-* expect (simular to expect js)
-
-###### Enzyme 
-Enzyme is a utility designed to ease the testing of react components. It has a JQuery like api that helps interact with React components. It provides several methods for compiling/rendering components 
-* `shallow(<Component />)` - Shallow rendering is useful to test a component witout indirectly asserting behavior of child components
-* `render(<Component />)` - Static rendring is used to render components to static html (text) and analyze the resulting HTML structure 
-* `mount(<Component />)` - Full Rendering is ideal when your components interact with DOM apis. It recures that a full DOM API be available at the global scope (document needs to be a global variable).
 
 #### Forms and Inputs
 React form elements maintain internal state. Think of React inputs as stateful child components. This means that we must manage the state of inputs through our own stateful  component and one way data binding. We create a parent component I'll refer to as a _form-container_ that manages the state for all child components of the form, passing any necissary state down into inputs through props. Each input has an `onChange` event that we can handle and use to update our _form-container's_ state each time the user interacts with an input.
 
+#### Props
+Components accept arbitrary inputs called "props". In jsx props are passed into a component with a syntax that looks like html attributes. `props` is the name of the object passed into a component consturctor, any prop added to a component in the jsx will be acciable as a propery on props. After props is passed into the constructor's `super` they are avaliable on the context by using `this.props`. **`props` are READ ONLY**
+
+``` javascript
+// props is the argument paseed to the consturctor 
+// props can be accesed on `this` after being passed into super
+class Foo extends React.Component {
+  constructor(props){
+    super(props)
+    console.log('title', props.title)
+    console.log('content', props.content)
+  }
+  render(){
+    return (
+      <div> 
+        <h1> {this.props.title} </h1>
+        <p> {this.props.content} </p>
+      </div>
+    )
+  }
+}
+
+// adding props to a component
+<Foo title='some literal value value' content={this.state.article.content}>
+```
+
+#### One Way Data flow
+State can only be passed from parrent to child through props. This enforces the idea of one way data flow. One way data flow is the way to describe that state can only be passed down the component tree (not up). If a child wants to pass some data to its parent, the parent can pass a function to the child through props and the child may invoke that function and pass it data for the parent to manage. 
