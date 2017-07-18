@@ -1,6 +1,10 @@
-import './style/main.scss'
-import React from 'react' // use jsx
-import ReactDom from 'react-dom' //  render jsx
+import './style/main.scss';
+import React from 'react'; // use jsx
+import ReactDom from 'react-dom'; //  render jsx
+
+var wat = {};
+
+wat = {...wat, name: 'cool'};
 
 class Navbar extends React.Component {
   constructor(props){
@@ -18,13 +22,13 @@ class Navbar extends React.Component {
 
 class App extends React.Component {
   constructor(props){
-    super(props)
+    super(props);
     this.state = {
       title: 'hello world',
       count: 0,
-    }
+    };
 
-    this.lulwat = 'cool'
+    this.lulwat = 'cool';
 
     // force handle click to use the current instances context
     this.handleClick = this.handleClick.bind(this);
@@ -32,13 +36,11 @@ class App extends React.Component {
 
 
   handleClick(e){
-    console.log('event', e)
+    console.log('event', e);
 
     this.setState((state) => {
-      return {
-        count: state.count + 1
-      }
-    })
+      return { count: state.count + 1 };
+    });
   }
 
   render(){
@@ -48,16 +50,10 @@ class App extends React.Component {
         <p onClick={this.handleClick}> counter: {this.state.count} </p>
         <p> {this.lulwat} </p>
       </div>
-    )
+    );
   }
 }
 
-
-
-
-
-
-
-ReactDom.render(<App />, document.getElementById('root'))
+ReactDom.render(<App />, document.getElementById('root'));
 
 

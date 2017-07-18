@@ -1,7 +1,7 @@
-'use strict'
+'use strict';
 
-const HtmlPlugin = require('html-webpack-plugin')
-const ExtractPlugin = require('extract-text-webpack-plugin')
+const HtmlPlugin = require('html-webpack-plugin');
+const ExtractPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   // tells webpack where to load the app from 
@@ -37,7 +37,7 @@ module.exports = {
       },
     ],
   },
-}
+};
 
 
 
