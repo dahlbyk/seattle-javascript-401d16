@@ -11,15 +11,15 @@
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": true,
+      "experimentalObjectRestSpread": true,
       "module": true,
-      "experimentalObjectRestSpread": true
+      "jsx": true
     }
   },
   "env": {
     "es6": true,
     "node": true,
-    "mocha": true,
+    "jest": true,
     "browser": true
   },
   "globals": {
@@ -27,5 +27,8 @@
     "__TITLE__": false,
     "__DEBUG__": false
   },
-  "extends": "eslint:recommended"
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ]
 }
