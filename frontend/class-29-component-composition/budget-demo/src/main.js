@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import {BrowserRouter, Route, Link} from 'react-router-dom'
+import {BrowserRouter, Route} from 'react-router-dom'
 
 import AboutContainer from './component/about-container'
 import DashboardContainer from './component/dashboard-container'
