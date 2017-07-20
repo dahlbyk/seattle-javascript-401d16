@@ -1,5 +1,6 @@
 {
   "rules": {
+    "react/prop-types": [0],
     "quotes": ["error", "single", { "allowTemplateLiterals": true }],
     "comma-dangle": ["error", "always-multiline"],
     "no-console": "off",
@@ -28,7 +29,6 @@
     "__DEBUG__": false
   },
   "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended"
+    "eslint:recommended"
   ]
 }
