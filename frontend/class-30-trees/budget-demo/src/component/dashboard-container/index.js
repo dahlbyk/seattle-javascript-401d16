@@ -47,6 +47,7 @@ class DashboardContainer extends React.Component {
   }
 
   expenseUpdate(expense){
+    console.log('expense', expense)
     let {app} = this.props
     app.setState(prevState => ({
       expenses: prevState.expenses.map((item) => {

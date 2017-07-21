@@ -28,9 +28,9 @@ class ExpenseItem extends React.Component {
           <ExpenseForm 
             expense={expense}
             submitTitle='update expense'
-            handleSubmit={(expense) => {
-              expense.id = expense.id  
-              this.props.expenseUpdate(expense)
+            handleSubmit={(data) => {
+              data.id = expense.id  
+              this.props.expenseUpdate(data)
             }} />)}
       </li>
     )
