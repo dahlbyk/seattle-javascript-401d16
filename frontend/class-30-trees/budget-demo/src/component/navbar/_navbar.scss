@@ -1,0 +1,22 @@
+@import "../../style/_vars.scss";
+@import "../../style/_base.scss";
+
+.navbar {
+  position: relative;
+  background: $color-primary;
+  padding: $pad *2;
+
+  nav {
+    position: absolute;
+    right: $pad;
+    top: 3 * $pad;
+    width: auto;
+
+    li {
+      @extend button;
+      display: inline-block;
+      width: auto;
+    }
+  }
+
+}
