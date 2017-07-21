@@ -1,0 +1,14 @@
+@import "../../style/_vars.scss";
+.expense-form {
+  input {
+    display: inline-block;
+    margin-right: $pad;
+    width: calc(40% - 0.5em);
+  }
+
+  button {
+    display: inline-block;
+    background: $color-success * 0.9 !important;
+    width: 20%;
+  }
+}
