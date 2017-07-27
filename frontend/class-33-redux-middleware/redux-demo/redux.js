@@ -3,21 +3,14 @@ createStore = (reducer) => {
   let subscribers = []
   // get inital state from reducer
   let state = reducer(undefined, {type: null})
-
-  let middlware = []
-  middlware.push((action) => {
-      state = reducer(state, action)
-      subscribers.forEach(cb => cb())
-      return action
-    
-  })
-
   return {
     getState: () => {
       return state
     },
     dispatch: (action) => {
-      // call all middlware
+      state = reducer(state, action)
+      subscribers.forEach(cb => cb())
+      return action
     },
     subscribe: (cb) => {
       subscribers.push(cb)
