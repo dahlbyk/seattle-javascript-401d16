@@ -1,4 +1,4 @@
-# 401 JS -- class 37 photo upload
+# 401 JS -- class 38 photo upload
 
 ## Learning Objectives
 * Students will learn to use the FileReader API to  preview files 
