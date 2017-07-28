@@ -1,4 +1,4 @@
-# 401 JS -- class 37 photo upload
+# 401 JS -- class 37 auth
 
 ## Learning Objectives
 * Stuents will learn to manage Basic and Bearer authentication on the client side
