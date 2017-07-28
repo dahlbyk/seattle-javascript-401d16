@@ -1,4 +1,4 @@
-# 401 JS -- class 39 inline svg icons
+# 401 JS -- class 39 svg icons
 
 ## Learning Objectives
 * Loading fonts with sass and webpack
