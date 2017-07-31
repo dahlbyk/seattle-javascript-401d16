@@ -42,9 +42,23 @@ listRouter.get('/api/lists', (req, res, next) => {
 })
 
 
+listRouter.put('/api/lists/:id', jsonParser, (req, res, next) => {
+  console.log('hit DELETE /api/lists/:id')
+
+  List.findByIdAndUpdate(req.params.id, req.body, {new: true, runValidators: true})
+  .then(list => res.json(list))
+  .catch(next)
+})
 
 
 
+listRouter.delete('/api/lists/:id', (req, res, next) => {
+  console.log('hit DELETE /api/lists/:id')
+
+  List.findByIdAndRemove(req.params.id) 
+  .then(() => res.sendStatus(204))
+  .catch(next)
+})
 
 
 
