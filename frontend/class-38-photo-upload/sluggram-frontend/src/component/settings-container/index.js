@@ -11,12 +11,7 @@ class SettingsContainer extends React.Component {
   }
   
   handleProfileCreate(profile){
-    console.log('profile', profile)
     return this.props.profileCreate(profile)
-    .then(res => {
-      console.log('res', res)
-      // this.props.history.push('/dashboard')
-    })
     .catch(console.error)
   }
 
