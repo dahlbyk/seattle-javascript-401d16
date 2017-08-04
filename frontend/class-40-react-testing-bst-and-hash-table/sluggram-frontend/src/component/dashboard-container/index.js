@@ -1,3 +1,4 @@
+import './_dashboard-container.scss'
 import React from 'react'
 import {connect} from 'react-redux'
 import * as util from '../../lib/util.js'

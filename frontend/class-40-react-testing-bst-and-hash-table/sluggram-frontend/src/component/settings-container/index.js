@@ -1,7 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import ProfileForm from '../profile-form'
-import {userProfileCreateRequest} from '../../action/profile-actions.js'
+import {
+  userProfileCreateRequest,
+  userProfileUpdateRequest,
+} from '../../action/profile-actions.js'
 
 class SettingsContainer extends React.Component {
   constructor(props){
@@ -15,15 +18,18 @@ class SettingsContainer extends React.Component {
     .then(() => {
       this.history.push('/dashoard')
     })
+    .catch(console.error)
   }
 
-  handleProfileUpdate(){
+  handleProfileUpdate(profile){
+    return this.props.userProfileUpdate(profile)
+    .catch(console.error)
   }
 
   render(){
     let handleComplete = this.props.userProfile 
-      ? this.handleProfileCreate 
-      : this.handleProfileUpdate
+      ? this.handleProfileUpdate
+      : this.handleProfileCreate
 
     return (
       <div className='settings-container'>
@@ -32,7 +38,7 @@ class SettingsContainer extends React.Component {
         <ProfileForm 
           profile={this.props.userProfile}
           buttonText='create userProfile'
-          onComplete={this.handleProfileCreate}
+          onComplete={handleComplete}
           />
       </div>
     )
@@ -45,6 +51,7 @@ let mapStateToProps = (state) => ({
 
 let mapDispatchToProps = (dispatch) => ({
   userProfileCreate: (userProfile) => dispatch(userProfileCreateRequest(userProfile)),
+  userProfileUpdate: (userProfile) => dispatch(userProfileUpdateRequest(userProfile)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SettingsContainer)

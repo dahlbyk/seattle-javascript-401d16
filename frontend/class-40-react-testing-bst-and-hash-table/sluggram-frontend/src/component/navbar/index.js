@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 import Icon from '../icon'
+import Avatar from '../avatar'
 import {tokenSet} from '../../action/auth-actions.js'
 import * as util from '../../lib/util.js'
 import * as authActions from '../../action/auth-actions.js'
@@ -13,6 +14,7 @@ class Navbar extends React.Component {
   constructor(props){
     super(props)
     this.validateRoute = this.validateRoute.bind(this)
+    this.handleLogout = this.handleLogout.bind(this)
   }
 
   componentDidMount(){
@@ -29,13 +31,17 @@ class Navbar extends React.Component {
 
     this.props.tokenSet(token)
     this.props.userProfileFetch()
-    .then(() => console.log('booyea'))
     .catch(() => {
-      console.log('ERROR: user does not have a userProfile')
+      console.log('PROFILE FETCH ERROR: user does not have a userProfile')
       if(!match.url.startsWith('/settings')){
         return history.replace('/settings')
       }
     })
+  }
+
+  handleLogout(){
+    this.props.logout()
+    this.props.history.push('/welcome/login')
   }
 
   render(){
@@ -51,8 +57,10 @@ class Navbar extends React.Component {
             <li><Link to='/dashboard'> dashboard </Link> </li>
           </ul>
         </nav>
-        <button onClick={this.props.logout}> logout </button>
-        <img className='avatar' src={this.props.userProfile && this.props.userProfile.avatar} />
+        <button onClick={this.handleLogout}> logout </button>
+        
+        {util.renderIf(this.props.userProfile, 
+          <Avatar profile={this.props.userProfile} />)}
       </header>
     )
   }

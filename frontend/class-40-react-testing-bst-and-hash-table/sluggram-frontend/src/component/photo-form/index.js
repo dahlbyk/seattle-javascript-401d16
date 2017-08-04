@@ -25,12 +25,16 @@ class PhotoForm extends React.Component {
       .then(preview => this.setState({preview}))
       .catch(console.error)
     }
-
   }
 
   handleSubmit(e){
     e.preventDefault()
     return this.props.onComplete(this.state)
+    .then(() => 
+      if(!this.props.profile){
+        this.setState({description: '' , preview: '', photo: null})
+      }
+    })
   }
 
   render(){

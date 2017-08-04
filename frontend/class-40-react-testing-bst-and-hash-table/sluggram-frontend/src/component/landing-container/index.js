@@ -25,8 +25,7 @@ class LandingContainer extends React.Component {
   handleSignup(user){
     return this.props.signup(user)
     .then(() => {
-      console.log('cool')
-      this.props.history.push('/dashboard')
+      this.props.history.push('/settings')
     })
     .catch(console.error)
   }

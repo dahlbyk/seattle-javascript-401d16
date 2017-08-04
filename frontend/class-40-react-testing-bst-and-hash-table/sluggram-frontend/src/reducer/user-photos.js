@@ -9,6 +9,8 @@ export default (state=[], action) => {
       return state.map(item => item._id === payload._id ? payload : item)
     case 'USER_PHOTO_DELETE':
       return state.filter(item => item._id !== payload._id)
+    case 'LOGOUT':
+      return []
     default: 
       return state
   }

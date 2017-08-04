@@ -27,7 +27,6 @@ export const userPhotosFetchRequest = (phoro) => (dispatch, getState) => {
   return superagent.get(`${__API_URL__}/photos/me`)
   .set('Authorization', `Bearer ${auth}`)
   .then(res => {
-    console.log('cool beans', res.body)
     dispatch(userPhotosSet(res.body.data))
     return res
   })
@@ -50,7 +49,6 @@ export const userPhotoDeleteRequest = (photo) => (dispatch, getState) => {
   return superagent.delete(`${__API_URL__}/photos/${photo._id}`)
   .set('Authorization', `Bearer ${auth}`)
   .then(res => {
-    console.log('cool beans', res.body)
     dispatch(userPhotoDelete(photo))
     return res
   })
@@ -63,7 +61,6 @@ export const userPhotoUpdateRequest = (photo) => (dispatch, getState) => {
   .field('description', photo.description)
   .attach('photo', photo.photo)
   .then(res => {
-    console.log('cool beans', res.body)
     dispatch(userPhotoUpdate(res.body))
     return res
   })
