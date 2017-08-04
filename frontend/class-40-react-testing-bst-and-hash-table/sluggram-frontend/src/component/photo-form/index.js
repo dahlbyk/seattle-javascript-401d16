@@ -13,10 +13,12 @@ class PhotoForm extends React.Component {
   }
 
   handleChange(e){
+    console.log('event', e.target)
     let {name} = e.target
     if(name == 'description'){
       this.setState({description: e.target.value})
     }
+
     if(name == 'photo'){
       let {files} = e.target
       let photo = files[0]
