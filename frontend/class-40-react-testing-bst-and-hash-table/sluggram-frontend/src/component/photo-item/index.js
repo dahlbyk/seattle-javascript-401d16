@@ -5,7 +5,7 @@ import PhotoForm from '../photo-form'
 import * as util from '../../lib/util.js'
 import * as photoActions from '../../action/photo-actions.js'
 
-class PhotoItem extends React.Component {
+export class PhotoItem extends React.Component {
   constructor(props){
     super(props)
 
@@ -35,7 +35,7 @@ class PhotoItem extends React.Component {
   render(){
     let {photo} = this.props
     return ( 
-      <div key={photo._id}>
+      <div>
         {util.renderIf(!this.state.editing, 
           <div>
             <img src={photo.url} />
@@ -64,6 +64,7 @@ let mapDispatchToProps = (dispatch) => ({
   deletePhoto: (photo) => dispatch(photoActions.userPhotoDeleteRequest(photo)),
   updatePhoto: (photo) => dispatch(photoActions.userPhotoUpdateRequest(photo)),
 })
+
 
 export default connect(
   mapStateToProps,

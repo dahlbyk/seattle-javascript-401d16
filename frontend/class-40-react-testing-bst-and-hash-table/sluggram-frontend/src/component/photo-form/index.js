@@ -44,6 +44,7 @@ class PhotoForm extends React.Component {
       <form 
         className='photo-form'
         onSubmit={this.handleSubmit}>
+
         <img src={this.state.preview || this.state.url || ''} />
         <input
           name='photo'

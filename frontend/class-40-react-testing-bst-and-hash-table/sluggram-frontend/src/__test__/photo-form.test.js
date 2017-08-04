@@ -63,5 +63,12 @@ describe('PhotoForm', () => {
     wrapper.find('form').simulate('submit')
     expect(mockOnComplete).toHaveBeenCalledWith(mockState)
   })
+
+  test('button text should say what i want', () => {
+    let mockButtonText = 'YAWWW DOPE!'
+    let wrapper = mount(<PhotoForm buttonText={mockButtonText} />)
+    expect(wrapper.find('button').text()).toEqual(` ${mockButtonText} `)
+  })
+
 })
 
