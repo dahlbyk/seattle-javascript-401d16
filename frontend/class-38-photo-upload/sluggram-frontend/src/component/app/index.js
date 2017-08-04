@@ -8,14 +8,6 @@ import LandingContainer from '../landing-container'
 import SettingsContainer from '../settings-container'
 import appStoreCreate from '../../lib/app-store-create.js'
 
-import kiwiIcon from '../../asset/icon/kiwi.icon.svg'
-
-let Icon = (props) => {
-  let innerHtml = {__html: props.data}
-  return (
-    <div dangerouslySetInnerHTML={innerHtml}></div>
-  )
-}
 
 class App extends React.Component {
   componentDidMount(){
@@ -32,8 +24,6 @@ class App extends React.Component {
           <div>
             <header>
               <h1> cool swee awesome yeeee </h1>
-              <i className="fa fa-trash" aria-hidden="true"></i>
-              <Icon data={kiwiIcon} />
               <nav>
                 <ul>
                   <li><Link to='/welcome/signup'> signup </Link> </li>
