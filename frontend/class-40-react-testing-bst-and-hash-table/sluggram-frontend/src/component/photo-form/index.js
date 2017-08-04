@@ -30,7 +30,7 @@ class PhotoForm extends React.Component {
   handleSubmit(e){
     e.preventDefault()
     return this.props.onComplete(this.state)
-    .then(() => 
+    .then(() => {
       if(!this.props.profile){
         this.setState({description: '' , preview: '', photo: null})
       }
