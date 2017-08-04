@@ -4,10 +4,3 @@ body {
   font-family: $font-primary;
 }
 
-.bird {
-  fill: green;
-  transition: 500ms;
-  &:hover {
-    fill: blue;
-  }
-}

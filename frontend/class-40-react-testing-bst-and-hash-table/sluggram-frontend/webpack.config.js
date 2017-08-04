@@ -25,7 +25,9 @@ if (production)
 module.exports = {
   plugins,
   entry: `${__dirname}/src/main.js`,
-  devServer: { historyApiFallback: true  },
+  devServer: { 
+    historyApiFallback: true,
+  },
   devtool: production ? undefined : 'cheap-module-eval-source-map',
   output: {
     path: `${__dirname}/build`,
@@ -44,7 +46,11 @@ module.exports = {
         loader: ExtractPlugin.extract(['css-loader', 'resolve-url-loader', 'sass-loader?sourceMap']),
       },
       {
-        test: /\.(woff|woff2|ttf|eot|svg).*/,
+        test: /\.icon.svg$/,
+        loader: 'raw-loader',
+      },
+      {
+        test: /\.(woff|woff2|ttf|eot).*/,
         exclude: /\.icon.svg/,
         use: [
           {
@@ -57,32 +63,28 @@ module.exports = {
         ],
       },
       {
-        test: /\.icon.svg/,
-        loader: 'raw-loader',
+        test: /\.(jpg|jpeg|gif|png|tiff|svg)$/,
+        exclude: /\.icon.svg$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 60000,
+              name: 'image/[name].[ext]',
+            },
+          },
+        ],
       },
-      //{
-        //test: /\.(jpg|jpeg|gif|png|tiff|svg)$/,
-        //exclude: /\.glyph.svg/,
-        //use: [
-          //{
-            //loader: 'url-loader',
-            //options: {
-              //limit: 60000,
-              //name: 'image/[name].[ext]',
-            //},
-          //},
-        //],
-      //},
-      //{
-        //test: /\.(mp3|aac|aiff|wav|flac|m4a|ogg)$/,
-        //exclude: /\.glyph.svg/,
-        //use: [
-          //{
-            //loader: 'file-loader',
-            //options: { name: 'audio/[name].[ext]' },
-          //},
-        //],
-      //},
+      {
+        test: /\.(mp3|aac|aiff|wav|flac|m4a|ogg)$/,
+        exclude: /\.glyph.svg/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: { name: 'audio/[name].[ext]' },
+          },
+        ],
+      },
     ],
   },
 }

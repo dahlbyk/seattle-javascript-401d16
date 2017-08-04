@@ -43,11 +43,11 @@ class LandingContainer extends React.Component {
     return (
 
       <div>
-        {util.renderIf(this.props.auth && this.props.profile, 
+        {util.renderIf(this.props.auth && this.props.userProfile, 
           <Redirect to='/dashboard' />
         )}
 
-        {util.renderIf(this.props.auth && !this.props.profile, 
+        {util.renderIf(this.props.auth && !this.props.userProfile, 
           <Redirect to='/settings' />
         )}
 
@@ -63,7 +63,7 @@ class LandingContainer extends React.Component {
 
 let mapStateToProps = (state) => ({
   auth: state.auth,
-  profile: state.profile,
+  userProfile: state.userProfile,
 })
 
 let mapDispatchToProps = (dispatch) => {
