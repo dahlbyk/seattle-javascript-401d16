@@ -1,7 +1,7 @@
 import './_navbar.scss'
 import React from 'react'
 import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 
 import Icon from '../icon'
 import Avatar from '../avatar'
@@ -9,6 +9,14 @@ import {tokenSet} from '../../action/auth-actions.js'
 import * as util from '../../lib/util.js'
 import * as authActions from '../../action/auth-actions.js'
 import {userProfileFetchRequest} from '../../action/profile-actions.js'
+
+let NavLink = (props) => (
+  <li className={util.classToggler({selected: props.url === `/${props.route}` })} >
+    <Link to={`/${props.route}`}>
+      {props.route}
+    </Link>
+  </li>
+)
 
 class Navbar extends React.Component {
   constructor(props){
@@ -45,28 +53,38 @@ class Navbar extends React.Component {
   }
 
   render(){
+    console.log('path', this.props.match)
+    let {url} = this.props.match
     return (
       <header className='navbar'>
-        <Icon className='logo' name='kiwi' />
-        <h1> sluggram </h1>
-        <nav>
-          <ul>
-            <li><Link to='/welcome/signup'> signup </Link> </li>
-            <li><Link to='/welcome/login'> login </Link> </li>
-            <li><Link to='/settings'> settings </Link> </li>
-            <li><Link to='/dashboard'> dashboard </Link> </li>
-          </ul>
-        </nav>
-        <button onClick={this.handleLogout}> logout </button>
-        
-        {util.renderIf(this.props.userProfile, 
-          <Avatar profile={this.props.userProfile} />)}
+        <main>
+          <Icon className='logo' name='kiwi' />
+          <h1> sluggram </h1>
+
+        {util.renderIf(this.props.loggedIn,
+          <div>
+            <nav>
+              <ul>
+                <NavLink route='settings' url={url} />
+                <NavLink route='dashboard' url={url} />
+              </ul>
+            </nav>
+            
+            {util.renderIf(this.props.userProfile, 
+              <Avatar profile={this.props.userProfile} />)}
+
+            <button onClick={this.handleLogout}> logout </button>
+          </div>
+        )}
+
+        </main>
       </header>
     )
   }
 }
 
 let mapStateToProps = (state) => ({
+  loggedIn: !!state.auth,
   userProfile: state.userProfile,
 })
 

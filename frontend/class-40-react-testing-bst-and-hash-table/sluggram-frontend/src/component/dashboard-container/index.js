@@ -14,7 +14,7 @@ class DashboardContainer extends React.Component {
 
   componentDidMount(){
     this.props.userPhotosFetch()
-    .catch(console.error)
+    .catch(util.logError)
   }
 
   render(){
@@ -24,7 +24,7 @@ class DashboardContainer extends React.Component {
         <PhotoForm
           buttonText='post'
           onComplete={(photo) =>{
-            this.props.userPhotoCreate(photo)
+            return this.props.userPhotoCreate(photo)
             .catch(console.error)
           }}
             />

@@ -16,7 +16,7 @@ class SettingsContainer extends React.Component {
   handleProfileCreate(userProfile){
     return this.props.userProfileCreate(userProfile)
     .then(() => {
-      this.history.push('/dashoard')
+      this.props.history.push('/dashoard')
     })
     .catch(console.error)
   }
