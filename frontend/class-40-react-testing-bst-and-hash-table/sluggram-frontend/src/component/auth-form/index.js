@@ -14,10 +14,11 @@ class AuthForm extends React.Component {
       email: '',
       username: '',
       password: '',
-      emailError: 'dorky fork',
+      emailError: null,
       usernameError: null,
       usernameAvailable: true,
       passwordError: null,
+      focused: null,
       error: false,
       submitted: false,
     }
@@ -25,6 +26,8 @@ class AuthForm extends React.Component {
     this.validateInput = this.validateInput.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleBlur = this.handleBlur.bind(this)
+    this.handleFocus = this.handleFocus.bind(this)
     this.usernameCheckAvailable = debounce(50)(this.usernameCheckAvailable.bind(this))
   }
 
@@ -80,6 +83,17 @@ class AuthForm extends React.Component {
     })
   }
 
+  handleFocus(e){
+    this.setState({ focused: e.target.name })
+  }
+
+  handleBlur(e){
+    let {name} = e.target
+    this.setState(state => ({
+      focused: state.focused == name ? null : state.focused,
+    }))
+  }
+
   handleChange(e){
     let {name, value} = e.target
     this.validateInput({...e})
@@ -101,24 +115,38 @@ class AuthForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault()
-    this.props.onComplete(this.state)
-    .then(() => {
-      this.setState({username: '', email: '', password: ''})
-    })
-    .catch(error => {
-      console.error(error)
-      this.setState({error})
-    })
+    if(!this.state.error){
+      this.props.onComplete(this.state)
+      .then(() => {
+        this.setState({username: '', email: '', password: ''})
+      })
+      .catch(error => {
+        console.error(error)
+        this.setState({
+          error,
+          submitted: true,
+        })
+      })
+    }
+    this.setState(state => ({
+      submitted: true,
+      usernameError: state.usernameError || state.username ? null : 'required',
+      emailError: state.emailError || state.email ? null : 'required',
+      passwordError: state.passwordError || state.password ? null : 'required',
+    }))
   }
 
   render(){
     let {
+      focused, 
+      submitted,
       username, 
       emailError,
       passwordError,
       usernameError, 
       usernameAvailable
     } = this.state
+
     return (
       <form
         onSubmit={this.handleSubmit}
@@ -129,7 +157,7 @@ class AuthForm extends React.Component {
 
         {util.renderIf(this.props.auth === 'signup', 
           <div>
-            <Tooltip message={emailError} />
+            <Tooltip message={emailError} show={focused === 'email' || submitted} />
             <input
               className={util.classToggler({error: emailError})}
               type='text'
@@ -137,18 +165,22 @@ class AuthForm extends React.Component {
               placeholder='email'
               value={this.state.email}
               onChange={this.handleChange}
+              onFocus={this.handleFocus}
+              onBlur={this.handleBlur}
               />
           </div>
         )}
 
-        <Tooltip message={usernameError} />
+        <Tooltip message={usernameError} show={focused === 'username' || submitted}/>
         <input
-          className={util.classToggler({error: usernameError || usernameAvailable})}
+          className={util.classToggler({error: usernameError || !usernameAvailable})}
           type='text'
           name='username'
           placeholder='username'
           value={this.state.username}
           onChange={this.handleChange}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
           />
         {util.renderIf(username,
           <p className='username-available'> 
@@ -157,7 +189,7 @@ class AuthForm extends React.Component {
         )}
 
 
-        <Tooltip message={passwordError} />
+        <Tooltip message={passwordError} show={ focused === 'password' || submitted}/>
         <input
           className={util.classToggler({passwordError})}
           type='password'
@@ -165,6 +197,8 @@ class AuthForm extends React.Component {
           placeholder='password'
           value={this.state.password}
           onChange={this.handleChange}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
           />
 
           <button type='submit'>
