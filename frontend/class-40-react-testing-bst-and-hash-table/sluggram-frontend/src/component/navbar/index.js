@@ -62,7 +62,7 @@ class Navbar extends React.Component {
           <h1> sluggram </h1>
 
         {util.renderIf(this.props.loggedIn,
-          <div>
+          <div className='panel'>
             <nav>
               <ul>
                 <NavLink route='settings' url={url} />

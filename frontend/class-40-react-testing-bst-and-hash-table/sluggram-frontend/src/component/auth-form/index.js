@@ -1,3 +1,4 @@
+import './_auth-form.scss'
 import React from 'react'
 import superagent from 'superagent'
 import {isEmail, isAlphanumeric, isAscii} from 'validator'

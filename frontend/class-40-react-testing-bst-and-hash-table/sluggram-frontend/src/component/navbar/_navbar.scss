@@ -3,11 +3,21 @@
 .navbar {
   position: relative;
   height: 100px;
+  &:hover { 
+    .bird {
+      transition: 500ms;
+      fill: blue !important; 
+    } 
+  }
 
   main {
     margin: 0 auto;
     height: 100%;
     border-bottom: 2px solid $color-secondary;
+  }
+
+  .panel {
+    height: 100%;
   }
 
   .logo, h1, nav, button, .avatar {
@@ -27,12 +37,14 @@
       .bird {
         fill: green;
         transition: 500ms;
-        &:hover { fill: blue; }
       }
     }
   }
 
   h1 {
+    transform: translate(-70px, 32px);
+    color: cyan * 0.8;
+    text-shadow: 2px 2px black;
     width: 20%;
     text-align: center;
     padding-top: $pad * 1.5;
@@ -50,22 +62,32 @@
 
     li {
       display: inline-block;
-      padding: $pad;
       height: 100%;
       width: auto;
       float: right;
+      border-top: 2px solid $color-secondary;
+      border-left: 2px solid $color-secondary;
+      border-right: 2px solid $color-secondary;
+      border-radius: 5px 5px 0 0 ;
 
       a {
+        height: 100%;
         font-weight: bolder;
+        padding: $pad;
+        padding-top: $pad * 1.5;
         &:hover { color: $color-primary; }
         &:active { color: $color-primary * 0.5; }
       }
     }
     .selected {
-      border-top: 2px solid $color-secondary;
-      border-left: 2px solid $color-secondary;
-      border-right: 2px solid $color-secondary;
-      border-radius: 5px 5px 0 0 ;
+      a {
+        background: $color-secondary;
+        &:hover { 
+          color: $color-black;
+          background: transparentize($color-secondary, 0.5);
+        }
+        &:active { color: $color-darkgrey; }
+      }
     }
   }
 
@@ -91,5 +113,4 @@
     &:hover {color: $color-error * 0.6;}
     &:active {color: $color-error * 0.3;}
   }
-
 }

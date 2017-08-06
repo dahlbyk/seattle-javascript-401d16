@@ -43,7 +43,19 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: ExtractPlugin.extract(['css-loader', 'resolve-url-loader', 'sass-loader?sourceMap']),
+        loader: ExtractPlugin.extract({
+          use: [
+            'css-loader',
+            'resolve-url-loader',
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true, 
+                includePaths: [`${__dirname}/src/style`],
+              }
+            }
+          ],
+        }),
       },
       {
         test: /\.icon.svg$/,
