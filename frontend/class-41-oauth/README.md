@@ -6,6 +6,7 @@
 
 ## Readings
 * (OAuth wiki)[https://en.wikipedia.org/wiki/OAuth]
+* (OAuth2 simplified)[https://aaronparecki.com/oauth-2-simplified/]
 * (Google OAuth2 Docs)[https://developers.google.com/identity/protocols/OAuth2]
 * (Google OAuth Server Side)[https://developers.google.com/identity/protocols/OAuth2WebServer]
 * (Google Openid Docs)[https://developers.google.com/identity/protocols/OpenIDConnect]
