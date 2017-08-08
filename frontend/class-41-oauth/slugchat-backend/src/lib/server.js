@@ -20,6 +20,7 @@ app.use(cors({
   credentials: true, 
 }))
 
+
 // routers
 app.use(authRouter)
 
