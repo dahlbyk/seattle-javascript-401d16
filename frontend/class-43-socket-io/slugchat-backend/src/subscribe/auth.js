@@ -7,7 +7,7 @@ const LOGIN = (socket) => (payload) => {
 
     let result = {
       username: socket.username, 
-      content: `${socket.username} joined the chat`,
+      content: `joined the chat`,
       meta: true,
     }
 
@@ -18,7 +18,7 @@ const LOGIN = (socket) => (payload) => {
 const LOGOUT = (socket) => (payload) => {
   let result = {
     username: socket.username, 
-    content: `${socket.username} left the chat`,
+    content: `left the chat`,
     meta: true,
   }
   socket.broadcast.emit('USER_DISCONNECTED', result)
